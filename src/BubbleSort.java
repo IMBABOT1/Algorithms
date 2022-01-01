@@ -1,5 +1,6 @@
 public class BubbleSort {
 
+    //O(n)^2
     public static void bubbleSort(int[] arr){
         int temp = 0;
 

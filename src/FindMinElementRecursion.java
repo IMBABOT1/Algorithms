@@ -1,5 +1,6 @@
 public class FindMinElementRecursion {
 
+    //O(n)
     public int findMin(int[] arr, int index){
         if (index == arr.length - 1){
          return arr[index];

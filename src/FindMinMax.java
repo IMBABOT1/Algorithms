@@ -1,5 +1,5 @@
 public class FindMinMax {
-
+    //O(n)
     public int findMin(int... arr){
         int min = arr[0];
         for (int i = 0; i < arr.length ; i++) {
@@ -9,7 +9,7 @@ public class FindMinMax {
         }
         return min;
     }
-
+    //O(n)
     public int findMax(int... arr){
         int max = arr[0];
 
