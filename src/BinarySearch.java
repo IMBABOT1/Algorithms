@@ -1,5 +1,5 @@
 public class BinarySearch {
-
+   // O(log n)
     public int binarySearch(int[] arr, int value){
         int l = 0;
         int r = arr.length;
