@@ -1,3 +1,5 @@
+package Sorting;
+
 public class SelectionSort {
     //O(n)^2
     public void selectionSort(int[] arr){
