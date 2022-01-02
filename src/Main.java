@@ -4,10 +4,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        LinearSearch ls = new LinearSearch();
+        BinarySearch bs = new BinarySearch();
 
-        int[] arr = {1,2,8,135,-9619,0, 123};
-        System.out.println(ls.linearSearch(arr, 135));
+
+        int arr[] =  {1, 8, 16, 31, 64, 80, 365, 1000};
+
+        System.out.println(bs.binarySearch(arr, 8));
 
     }
 }
