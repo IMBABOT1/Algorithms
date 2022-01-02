@@ -1,5 +1,5 @@
 public class SelectionSort {
-
+    //O(n)^2
     public void selectionSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int f = i;
