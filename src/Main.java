@@ -1,3 +1,4 @@
+import Sorting.CountingSort;
 import Sorting.ImprovedBubbleSort;
 import Sorting.InsertionSort;
 
@@ -7,11 +8,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ImprovedBubbleSort bs = new ImprovedBubbleSort();
+        CountingSort cs = new CountingSort();
 
-        int[] arr = {16, 14, 5, 6, 8};
-        bs.bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
+        int[] arr = {2, 1, 1, 0, 2, 5, 4, 0, 2, 8, 7, 7, 9, 2, 0, 1, 9};
+
+        cs.countingSort(arr);
+
 
     }
 }
