@@ -31,6 +31,14 @@ public class LinkedList<T> {
         }
     }
 
+    private Node<T> head;
 
+    public LinkedList(){
+        head = null;
+    }
+
+    public boolean isEmpty(){
+        return head == null;
+    }
 
 }
