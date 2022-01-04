@@ -8,12 +8,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-        CountingSort cs = new CountingSort();
 
-        int[] arr = {2, 1, 1, 0, 2, 5, 4, 0, 2, 8, 7, 7, 9, 2, 0, 1, 9};
 
-        cs.countingSort(arr);
-
+        int[] arr = {10,20,30,40,50,60,70,80,90,100};
+        ShiftElements.shiftRight(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 }
