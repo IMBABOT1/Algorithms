@@ -22,11 +22,14 @@ public class Stack {
     }
 
     public void push(int value){
-        if (isFull()){
-            throw new RuntimeException("Stack overflow");
+        if (top == size){
+            int[] temp = new int[arr.length * 2];
+            System.arraycopy(arr, 0, temp, 0, arr.length);
+            arr = temp;
         }
         top++;
         arr[top] = value;
+        size = top;
     }
 
     public int pop(){
