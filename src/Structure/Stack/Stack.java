@@ -2,13 +2,13 @@ package Structure.Stack;
 
 import java.util.Arrays;
 
-public class Stack {
+public class Stack<T> {
     private int top;
-    private int[] arr;
+    private Object[] arr;
     private int size;
 
     public Stack(int size){
-        arr = new int[size];
+        arr = new Object[size];
         top = -1;
         this.size = size;
     }
@@ -23,7 +23,7 @@ public class Stack {
 
     public void push(int value){
         if (top == size){
-            int[] temp = new int[arr.length * 2];
+            Object[] temp = new Object[arr.length * 2];
             System.arraycopy(arr, 0, temp, 0, arr.length);
             arr = temp;
         }
@@ -32,12 +32,12 @@ public class Stack {
         size = top;
     }
 
-    public int pop(){
-        int result;
+    public Object pop(){
+        T result;
         if (isEmpty()){
             throw new RuntimeException("Stack is empty");
         }
-        result = arr[top];
+        result = (T) arr[top];
         top--;
         return result;
     }
@@ -46,11 +46,11 @@ public class Stack {
         return (top+1);
     }
 
-    public int peek(int position){
+    public T peek(int position){
         if (isEmpty()){
             throw new RuntimeException("Stack is empty");
         }
-        return arr[position];
+        return (T) arr[position];
     }
 
     public void change(int position, int value){

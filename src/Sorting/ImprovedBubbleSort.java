@@ -2,7 +2,7 @@ package Sorting;
 
 public class ImprovedBubbleSort {
 
-    public void bubbleSort(int[] arr){
+    public static void bubbleSort(int[] arr){
         for (int i = 0; i < arr.length - 1 ; i++) {
             boolean isSwap = false;
             for (int j = 0; j < arr.length - 1 - i ; j++) {
