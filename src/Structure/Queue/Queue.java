@@ -1,8 +1,8 @@
 package Structure.Queue;
 
-public class Queue {
+public class Queue<T> {
 
-    private int[] arr;
+    private Object[] arr;
     private int front;
     private int rear;
     private int size;
@@ -11,7 +11,7 @@ public class Queue {
         this.size = size;
         front = -1;
         rear = - 1;
-        arr = new int[size];
+        arr = new Object[size];
 
     }
 
@@ -23,23 +23,45 @@ public class Queue {
         return rear == arr.length - 1;
     }
 
-    public void enqueue(int value){
+    public void enqueue(T value){
         if (isFull()){
             throw new RuntimeException("Queue is full");
         }else if (isEmpty()){
             rear = front = 0;
+            arr[rear] = value;
         }else {
             rear++;
+            arr[rear] = value;
         }
-        arr[rear] = value;
+    }
+
+    public T dequeue(){
+        T e;
+        if (isEmpty()){
+            throw new RuntimeException("Queue is empty");
+        }else if(front == rear){
+            e = (T) arr[front];
+            front = -1;
+            rear = -1;
+            return e;
+        }else {
+            e = (T) arr[front];
+            front++;
+            return e;
+        }
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        for (int i = 0 ; i <= rear ; i++) {
-            sb.append(arr[i] + ", ");
+
+        if (front == -1 && rear == -1){
+            sb.append("[]");
+        }else {
+            for (int i = front; i <= rear; i++) {
+                sb.append(arr[i] + ", ");
+            }
         }
         sb.setLength(sb.length() - 2);
         sb.append("]");
