@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class SortTheOddBubbleSort {
     //O(n)^2
     public static int[] sortArray(int[] array) {

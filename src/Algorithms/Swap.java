@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class Swap {
 
     //O(1);

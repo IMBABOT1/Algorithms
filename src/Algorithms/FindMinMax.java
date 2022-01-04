@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class FindMinMax {
     //O(n)
     public int findMin(int... arr){

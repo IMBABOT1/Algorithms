@@ -1,6 +1,4 @@
-import Sorting.CountingSort;
-import Sorting.ImprovedBubbleSort;
-import Sorting.InsertionSort;
+package Algorithms;
 
 import java.util.Arrays;
 

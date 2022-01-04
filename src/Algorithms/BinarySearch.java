@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class BinarySearch {
    // O(log n)
     public int binarySearch(int[] arr, int value){
