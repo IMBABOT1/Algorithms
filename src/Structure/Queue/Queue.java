@@ -51,6 +51,10 @@ public class Queue<T> {
         }
     }
 
+    public int count(){
+        return (rear - front + 1);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

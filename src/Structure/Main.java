@@ -6,9 +6,13 @@ import Structure.Stack.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>(10);
-        stack.push(10);
-        stack.push(12);
-        stack.push(13);
+       Queue<Integer> queue = new Queue<>(12);
+       queue.enqueue(132);
+       queue.enqueue(321);
+       queue.enqueue(324);
+
+       System.out.println(queue);
+
+        System.out.println(queue.count());
     }
 }
