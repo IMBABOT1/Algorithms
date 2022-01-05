@@ -1,17 +1,21 @@
 package Structure;
 
-import Structure.Queue.Queue;
-import Structure.Stack.Stack;
+import Structure.CircularQueue.CircularQueue;
 
 public class Main {
 
     public static void main(String[] args) {
-       Queue<Integer> queue = new Queue<>(12);
-       queue.enqueue(132);
-       queue.enqueue(321);
-       queue.enqueue(324);
+        CircularQueue<Integer> queue = new CircularQueue<>(5);
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
 
-       System.out.println(queue);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+
+        System.out.println(queue);
 
         System.out.println(queue.count());
     }
