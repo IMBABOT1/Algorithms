@@ -123,6 +123,6 @@ public class DoublyLinkedList<T> {
             current = current.next;
             sb.append((current == null) ? "]" : ", ");
         }
-     return  sb.toString();
+        return  sb.toString();
     }
 }
