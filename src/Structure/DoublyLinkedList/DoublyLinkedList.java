@@ -85,14 +85,23 @@ public class DoublyLinkedList<T> {
                 return (T)delete;
             }else if (!head.equals(node)){
                 Node<T> find = head;
-                Node<T> temp = null;
+                Node<T> pnt = null;
                 while (!find.equals(node)){
                     find = find.next;
                     if (find.equals(node)){
-                        temp = find;
+                        pnt = find;
                     }
                 }
-                System.out.println(temp);
+                Node<T> next = pnt.next;
+                Node<T> prev = pnt.prev;
+                if (next == null){
+                    delete = pnt;
+                    prev.next = null;
+                }else if (next != null){
+                    delete = pnt;
+                    prev.next = next;
+                    next.prev = prev;
+                }
             }
         }
         return (T) delete;
