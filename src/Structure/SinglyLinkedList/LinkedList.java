@@ -3,22 +3,17 @@ package Structure.SinglyLinkedList;
 import java.util.Objects;
 
 public class LinkedList<T> {
-    private class Node<T> {
-        public int key;
-        public T data;
-        public Node<T> next;
+    private class Node<T>{
+        private T data;
+        private Node<T> next;
 
-        public Node(T data) {
-            key = -1;
+        public Node(T data){
             this.data = data;
-            next = null;
         }
-
         @Override
         public String toString() {
             return data.toString();
         }
-
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -29,118 +24,85 @@ public class LinkedList<T> {
     }
 
     private Node<T> head;
+    private int size;
 
-    public LinkedList() {
+    public LinkedList(){
         head = null;
-    }
-
-    public LinkedList(Node n) {
-        head = n;
+        size = 0;
     }
 
     public boolean isEmpty(){
         return head == null;
     }
 
-    public Node nodeExist(int key) {
-        Node<T> temp = null;
+    public int size(){
+        return size;
+    }
+
+    public boolean contains(T element){
+        Node<T> temp = new Node<>(element);
+        Node<T> current = head;
+        while (!current.equals(temp)){
+            if (current.next == null){
+                return false;
+            }else {
+                current = current.next;
+            }
+        }
+        return true;
+    }
+
+    public boolean insert(T element){
+        Node<T> node = new Node<>(element);
         Node<T> ptr = head;
-
-        while (ptr != null) {
-            if (ptr.key == key) {
-                temp = ptr;
-            }
-            ptr = ptr.next;
-        }
-        return temp;
-    }
-
-    public void appendNode(T n) {
-        Node<T> node = new Node<>(n);
-        if (nodeExist(node.key) != null) {
-            throw new RuntimeException("Node already exists");
-        } else {
-            if (head == null) {
-                head = node;
-                head.key++;
-            } else if (head != null) {
-                Node<T> ptr = head;
-                while (ptr.next != null) {
-                    ptr = ptr.next;
-                }
-                ptr.next = node;
-                node.key++;
-            }
-        }
-    }
-
-    public void prependNode(T n) {
-        Node<T> node = new Node<>(n);
-        if (nodeExist(node.key) != null) {
-            throw new RuntimeException("Node already exists");
-        } else {
-            node.next = head;
-            head = node;
-            node.key++;
-        }
-    }
-
-    public void insertNodeAfter(int key, Node n) {
-        Node<T> ptr = nodeExist(key);
-        if (ptr == null) {
-            throw new RuntimeException("Node doesn't exist: " + key);
-        } else {
-            if (nodeExist(n.key) != null) {
-                throw new RuntimeException("Node already exists");
-            } else {
-                n.next = ptr.next;
-                ptr.next = n;
-            }
-        }
-    }
-
-    public Node deleteNodeByKey(int key){
-        Node<T> delete = null;
         if (head == null){
+            head = node;
+            size++;
+            return true;
+        }else if (head != null){
+            while (ptr.next != null){
+                ptr = ptr.next;
+            }
+            ptr.next = node;
+            size++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean remove(T element){
+        Node<T> delete = new Node<>(element);
+        if (head == null) {
             throw new RuntimeException("List is empty");
         }else if (head != null){
-            if (head.key == key){
-                delete = head;
+            if (head.equals(delete)){
                 head = head.next;
+                size--;
+                return true;
             }else {
                 Node<T> temp = null;
                 Node<T> prev = head;
                 Node<T> current = head.next;
                 while (current != null){
-                    if (current.key == key){
+                    if (current.equals(delete)){
                         temp = current;
                         current = null;
                     }else {
                         prev = prev.next;
                         current = current.next;
                     }
-                }
-                if (temp != null){
-                    delete = temp;
-                    prev.next = temp.next;
-                }else if (temp == null){
-                    throw new RuntimeException("Node doesn't exist");
+                    if (temp != null){
+                        prev.next = temp.next;
+                        size--;
+                        return true;
+                    }else {
+                        return false;
+                    }
                 }
             }
         }
-
-        return delete;
+        return false;
     }
-
-    public void updateNodeByKey(int key, T data){
-        Node<T> ptr = nodeExist(key);
-        if (ptr != null){
-            ptr.data = data;
-        }else if (ptr == null){
-            throw new RuntimeException("Node doesn't exist");
-        }
-    }
-
     @Override
     public String toString() {
         if (isEmpty()) return "[]";
