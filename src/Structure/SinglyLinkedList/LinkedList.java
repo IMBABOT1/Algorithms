@@ -14,6 +14,12 @@ public class LinkedList<T> {
         public String toString() {
             return data.toString();
         }
+
+        @Override
+        public int hashCode() {
+            return data.hashCode() * 32;
+        }
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -103,6 +109,7 @@ public class LinkedList<T> {
         }
         return false;
     }
+
     @Override
     public String toString() {
         if (isEmpty()) return "[]";

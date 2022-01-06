@@ -1,22 +1,23 @@
 package Structure;
 
 
-import Structure.SinglyLinkedList.LinkedList;
+import Structure.DoublyLinkedList.DoublyLinkedList;
+
+import java.util.LinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.insert(1);
-        list.insert(1);
-        list.insert(123);
+        DoublyLinkedList<Integer> dls = new DoublyLinkedList<>();
+        dls.insert(1);
+        dls.insert(2);
+        dls.insert(123);
 
-        System.out.println(list.remove(1));;
-        System.out.println(list.contains(1));
-        list.remove(123);
-        System.out.println(list.size());
-        list.remove(1);
+        dls.remove(2);
 
-        System.out.println(list);
+
+
+        System.out.println(dls);
+
     }
 }
