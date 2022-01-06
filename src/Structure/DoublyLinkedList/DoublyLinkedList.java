@@ -88,6 +88,9 @@ public class DoublyLinkedList<T> {
                 Node<T> pnt = null;
                 while (!find.equals(node)){
                     find = find.next;
+                    if (find == null){
+                        throw new RuntimeException("Value doesn't exist in list: " + node);
+                    }
                     if (find.equals(node)){
                         pnt = find;
                     }
