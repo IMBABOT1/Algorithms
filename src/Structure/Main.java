@@ -1,22 +1,20 @@
 package Structure;
 
 import Structure.CircularQueue.CircularQueue;
+import Structure.SinglyLinkedList.LinkedList;
+import Structure.Temp.Cat;
+
+import java.util.Calendar;
 
 public class Main {
 
     public static void main(String[] args) {
-        CircularQueue<Integer> queue = new CircularQueue<>(5);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.enqueue(5);
+        LinkedList<Integer> list = new LinkedList<>();
+        list.appendNode(1);
+        list.appendNode(123);
+        list.appendNode(1);
 
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-
-        System.out.println(queue);
-
-        System.out.println(queue.count());
+        list.nodeExist()
+        System.out.println(list);
     }
 }
