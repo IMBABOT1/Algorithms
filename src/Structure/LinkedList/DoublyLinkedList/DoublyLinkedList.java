@@ -1,4 +1,4 @@
-package Structure.DoublyLinkedList;
+package Structure.LinkedList.DoublyLinkedList;
 
 import java.util.Objects;
 
