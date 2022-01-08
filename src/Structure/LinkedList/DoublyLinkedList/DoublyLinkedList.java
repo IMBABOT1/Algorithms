@@ -76,24 +76,26 @@ public class DoublyLinkedList<T> {
     public T remove(T element){
        Node<T> node = new Node<>(element);
        Node<T> delete = null;
-       if (contains(element)){
+       if (!contains(element)){
+           throw new RuntimeException("Element doesn't exist");
+        }else {
            if (head == null){
                throw new RuntimeException("List is empty");
-           } else if (head == node){
+           }else if (head == node){
                if (head.next == null){
                    delete = head;
                    head = null;
                    return delete.data;
                }else {
-                   Node<T> pnt = head;
-                   while (pnt.next != head){
-                       pnt = pnt.next;
+                   Node<T> ptr = head;
+                   while (ptr.next != head){
+                       ptr = ptr.next;
                    }
-                   pnt.next = head.next;
+                   ptr.next = head.next;
                    head = head.next;
-
                }
-           }else {
+           }
+           else {
                Node<T> temp = null;
                Node<T> prev = head;
                Node<T> current = head.next;
@@ -103,15 +105,13 @@ public class DoublyLinkedList<T> {
                        delete = temp;
                        current = null;
                    }else {
-                       prev = prev.prev;
+                       prev = prev.next;
                        current = current.next;
                    }
                }
                prev.next = temp.next;
            }
-       }else {
-           throw new RuntimeException("Element doesn't exist");
-       }
+        }
        return delete.data;
     }
 

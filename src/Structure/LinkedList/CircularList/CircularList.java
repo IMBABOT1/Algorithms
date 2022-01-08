@@ -50,7 +50,7 @@ public class CircularList<T> {
             return false;
         }else if (head != null){
             do {
-                if (ptr.equals(element)){
+                if (ptr.data.equals(element)){
                     return true;
                 }
                 ptr = ptr.next;
@@ -105,7 +105,6 @@ public class CircularList<T> {
                         temp = current;
                         delete = current;
                         current = null;
-                        return temp.data;
                     } else {
                         prev = prev.next;
                         current = current.next;
@@ -117,6 +116,9 @@ public class CircularList<T> {
         return delete.data;
     }
 
+
+
+
     @Override
     public String toString() {
         if (isEmpty()) return "[]";
@@ -124,8 +126,12 @@ public class CircularList<T> {
         StringBuilder sb = new StringBuilder("[");
         do {
             sb.append(current);
-            current = current.next;
-            sb.append((current == head) ? "]" : ", ");
+            if (current.next != null) {
+                current = current.next;
+                sb.append((current == head) ? "]" : ", ");
+            }if (current.next == null){
+                sb.append("]");
+            }
         }while (current != head);
         return sb.toString();
     }

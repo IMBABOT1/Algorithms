@@ -1,22 +1,21 @@
 package Algorithms;
 
 public class BinarySearch {
-   // O(log n)
-    public int binarySearch(int[] arr, int value){
-        int l = 0;
-        int r = arr.length;
-        int m;
-        while (l < r){
-            m = l + r >> 1;
-            if (value == arr[m]){
-                return  m;
-            }else if (value < arr[m]){
-                r = m;
-            }else {
-                l = m + 1;
-            }
-        }
 
+    public static int binarySearch(int[] arr, int element){
+        int left = 0;
+        int right = arr.length;
+        int m = 0;
+        while (left <= right){
+             m = left + (right - left) / 2;
+             if (arr[m] == element){
+                 return m;
+             }else if (arr[m] < element){
+                 left = m + 1;
+             }else {
+                 right = m - 1;
+             }
+        }
         return -1;
     }
 }
