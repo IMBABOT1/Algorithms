@@ -1,58 +1,63 @@
-package Structure.Queue;
+package Structure.Queue.CircularQueue;
 
-public class Queue<T> {
-
+public class CircularQueue<T> {
     private Object[] arr;
     private int front;
     private int rear;
     private int size;
+    private int count;
 
-    public Queue(int size){
+    public CircularQueue(int size) {
         this.size = size;
+        count = 0;
         front = -1;
-        rear = - 1;
+        rear = -1;
         arr = new Object[size];
 
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return front == -1 && rear == -1;
     }
 
-    public boolean isFull(){
-        return rear == arr.length - 1;
+    public boolean isFull() {
+        return (rear + 1) % arr.length == front;
     }
 
-    public void enqueue(T value){
-        if (isFull()){
+    public void enqueue(T value) {
+        if (isFull()) {
             throw new RuntimeException("Queue is full");
-        }else if (isEmpty()){
+        } else if (isEmpty()) {
             rear = front = 0;
             arr[rear] = value;
-        }else {
-            rear++;
+            count++;
+        } else {
+            rear = (rear + 1) % arr.length;
             arr[rear] = value;
+            count++;
         }
     }
 
-    public T dequeue(){
+    public T dequeue() {
         T e;
-        if (isEmpty()){
+        if (isEmpty()) {
             throw new RuntimeException("Queue is empty");
-        }else if(front == rear){
+        } else if (front == rear) {
             e = (T) arr[front];
             front = -1;
             rear = -1;
+            count--;
             return e;
-        }else {
+        } else {
             e = (T) arr[front];
-            front++;
+            front = (front + 1) % arr.length;
+            count--;
             return e;
         }
     }
 
-    public int count(){
-        return (rear - front + 1);
+    public int count() {
+        return count;
     }
 
     @Override
@@ -60,9 +65,9 @@ public class Queue<T> {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
 
-        if (front == -1 && rear == -1){
+        if (front == -1 && rear == -1) {
             sb.append("[]");
-        }else {
+        } else {
             for (int i = front; i <= rear; i++) {
                 sb.append(arr[i] + ", ");
             }
@@ -72,3 +77,4 @@ public class Queue<T> {
         return sb.toString();
     }
 }
+

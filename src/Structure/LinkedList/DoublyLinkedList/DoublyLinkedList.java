@@ -74,40 +74,45 @@ public class DoublyLinkedList<T> {
 
 
     public T remove(T element){
-        Node<T> node = new Node<>(element);
-        Node<T> delete = null;
-        if (head == null){
-            throw new RuntimeException("List is empty");
-        }else if (head != null){
-            if (head.equals(node)){
-                delete = head;
-                head = head.next;
-                return delete.data;
-            }else if (!head.equals(node)){
-                Node<T> find = head;
-                Node<T> pnt = null;
-                while (!find.equals(node)){
-                    find = find.next;
-                    if (find == null){
-                        throw new RuntimeException("Value doesn't exist in list: " + node);
-                    }
-                    if (find.equals(node)){
-                        pnt = find;
-                    }
-                }
-                Node<T> next = pnt.next;
-                Node<T> prev = pnt.prev;
-                if (next == null){
-                    delete = pnt;
-                    prev.next = null;
-                }else if (next != null){
-                    delete = pnt;
-                    prev.next = next;
-                    next.prev = prev;
-                }
-            }
-        }
-        return delete.data;
+       Node<T> node = new Node<>(element);
+       Node<T> delete = null;
+       if (contains(element)){
+           if (head == null){
+               throw new RuntimeException("List is empty");
+           } else if (head == node){
+               if (head.next == null){
+                   delete = head;
+                   head = null;
+                   return delete.data;
+               }else {
+                   Node<T> pnt = head;
+                   while (pnt.next != head){
+                       pnt = pnt.next;
+                   }
+                   pnt.next = head.next;
+                   head = head.next;
+
+               }
+           }else {
+               Node<T> temp = null;
+               Node<T> prev = head;
+               Node<T> current = head.next;
+               while (current != null){
+                   if (current == node){
+                       temp = current;
+                       delete = temp;
+                       current = null;
+                   }else {
+                       prev = prev.prev;
+                       current = current.next;
+                   }
+               }
+               prev.next = temp.next;
+           }
+       }else {
+           throw new RuntimeException("Element doesn't exist");
+       }
+       return delete.data;
     }
 
 
