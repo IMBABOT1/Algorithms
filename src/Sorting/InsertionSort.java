@@ -1,7 +1,7 @@
 package Sorting;
 
 public class InsertionSort {
-
+    //O(n^2)
     public static void insertionSort(int[] arr){
         int j = 0;
         int key = 0;

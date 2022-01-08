@@ -6,8 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1,-123, 5, 4689, 3, -132, -321};
-        SelectionSort.selectionSort(arr);
+        BubbleSort.bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
-
     }
 }
