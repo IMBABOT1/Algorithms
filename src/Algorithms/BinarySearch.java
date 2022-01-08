@@ -1,7 +1,7 @@
 package Algorithms;
 
 public class BinarySearch {
-
+    //O(logN)
     public static int binarySearch(int[] arr, int element){
         int left = 0;
         int right = arr.length;
