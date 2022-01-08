@@ -1,7 +1,7 @@
 package Sorting;
 
 public class ImprovedBubbleSort {
-
+    //O(n^2)
     public static void improvedBubbleSort(int[] arr){
         boolean flag = false;
         for (int i = 0; i < arr.length; i++) {
