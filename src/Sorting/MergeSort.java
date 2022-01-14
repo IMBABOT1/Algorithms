@@ -1,5 +1,5 @@
 package Sorting;
-
+//O(n log(n))
 public class MergeSort {
     private static void merge(int[] arr, int left, int mid, int right, int size){
         int i = left;
