@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,-123, 5, 4689, 3, -132, -321, 128};
-        QuickSort.quickSort(arr,0, arr.length - 1);
+        int[] arr = new int[]{1, 6, 1, 3, 5, 3};
+        CountingSort.countingSort(arr, 7);
 
         System.out.println(Arrays.toString(arr));
     }
