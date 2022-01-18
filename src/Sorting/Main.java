@@ -1,11 +1,11 @@
 package Sorting;
 
-
-import Algorithms.InfixToPostfix;
+import Algorithms.InfixToPrefix;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(InfixToPostfix.InfixToPostfix("a + b"));
+        System.out.println(InfixToPrefix.infixToPrefix("((a+b-c)*d^e^f)/g"));
+
     }
 }
