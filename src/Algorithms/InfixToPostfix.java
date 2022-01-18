@@ -27,11 +27,9 @@ public class InfixToPostfix {
     public static String InfixToPostfix(String infix) {
        String postfix = "";
        Stack<Character> s = new Stack<>();
-        for(int i=0;i<infix.length();i++)
-        {
+        for(int i=0;i<infix.length();i++) {
             if((infix.charAt(i) >= 'a' && infix.charAt(i) <= 'z')
-                    ||(infix.charAt(i) >= 'A' && infix.charAt(i) <= 'Z'))
-            {
+                    ||(infix.charAt(i) >= 'A' && infix.charAt(i) <= 'Z')) {
                 postfix+=infix.charAt(i);
             }
             else if(infix.charAt(i) == '(')
