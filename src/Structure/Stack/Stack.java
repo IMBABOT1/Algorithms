@@ -13,6 +13,10 @@ public class Stack<T> {
         this.size = size;
     }
 
+    public Stack() {
+
+    }
+
     public boolean isEmpty(){
         return top == -1;
     }
