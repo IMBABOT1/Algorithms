@@ -1,4 +1,4 @@
-package Algorithms;
+package Expressions;
 
 import java.util.Stack;
 
