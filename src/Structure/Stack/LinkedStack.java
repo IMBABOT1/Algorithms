@@ -1,4 +1,6 @@
 package Structure.Stack;
+import Structure.LinkedList.SinglyLinkedList.SinglyLinkedList;
+
 import java.util.Objects;
 
 public class LinkedStack<T> {
@@ -52,16 +54,62 @@ public class LinkedStack<T> {
         }
     }
 
-    public T pop(){
+    public boolean search(T element){
+        Node<T> node = new Node<>(element);
+        Node<T> temp = top;
+        boolean exist = false;
+        while (temp != null){
+            if (temp == node){
+                exist = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        return exist;
+    }
 
+    public T pop(){
+        Node<T> temp = null;
+        if (isEmpty()){
+            throw new RuntimeException("Stack is empty");
+        }else {
+            temp = top;
+            top = top.next;
+        }
+        return temp.data;
     }
 
     public T peek(){
-
+        Node<T> temp = null;
+        if (isEmpty()){
+            throw new RuntimeException("Stack is empty");
+        }else {
+            temp = top;
+        }
+        return temp.data;
     }
 
     public int count(){
+        Node<T> node = top;
+        int count = 0;
+        while (node != null){
+            count++;
+            node = node.next;
+        }
 
+        return count;
     }
 
+    @Override
+    public String toString() {
+        if (isEmpty()) return "[]";
+        Node<T> current = top;
+        StringBuilder sb = new StringBuilder("[");
+        while (current != null){
+            sb.append(current);
+            current = current.next;
+            sb.append((current == null) ? "]" : ", ");
+        }
+        return sb.toString();
+    }
 }
