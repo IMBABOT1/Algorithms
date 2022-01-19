@@ -1,7 +1,4 @@
 package Structure.Stack;
-
-import Structure.LinkedList.SinglyLinkedList.SinglyLinkedList;
-
 import java.util.Objects;
 
 public class LinkedStack<T> {
@@ -33,4 +30,38 @@ public class LinkedStack<T> {
             return Objects.equals(this.data, node.data);
         }
     }
+
+    private Node<T> top;
+
+    public LinkedStack(){
+        top = null;
+    }
+
+    public boolean isEmpty(){
+        return top == null;
+    }
+
+    public void push(T element){
+        Node<T> node = new Node<>(element);
+        if (top == null){
+            top = node;
+        }else {
+            Node<T> temp = top;
+            top = node;
+            node.next = temp;
+        }
+    }
+
+    public T pop(){
+
+    }
+
+    public T peek(){
+
+    }
+
+    public int count(){
+
+    }
+
 }
