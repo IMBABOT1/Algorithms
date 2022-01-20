@@ -17,6 +17,11 @@ public class BinarySearchTree {
             left = null;
             right = null;
         }
+
+        @Override
+        public String toString() {
+            return String.valueOf(data);
+        }
     }
 
     private int GLOBAL_SPACE = 5;
@@ -141,5 +146,6 @@ public class BinarySearchTree {
 //    public TreeNode deleteNode(TreeNode r, int v){
 //
 //    }
+
 
 }
