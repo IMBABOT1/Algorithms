@@ -1,14 +1,14 @@
-import Structure.Queue.Queue.LinkedQueue;
+import Structure.Queue.LinkedQueue.LinkedQueue;
+import Structure.Trees.BinarySearchTree;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        LinkedQueue<Integer> linkedQueue = new LinkedQueue<>();
+        BinarySearchTree bst = new BinarySearchTree();
 
-        System.out.println(linkedQueue.isEmpty());
-        linkedQueue.enqueue(132);
-        linkedQueue.enqueue(321);
-        System.out.println(linkedQueue);
+        bst.insertNode(1);
+
+        System.out.println(bst);
     }
 }

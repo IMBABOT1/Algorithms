@@ -1,4 +1,4 @@
-package Structure.Queue.Queue;
+package Structure.Queue.LinkedQueue;
 
 import java.util.Objects;
 
