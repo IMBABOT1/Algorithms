@@ -14,6 +14,6 @@ public class Main {
         bst.insertNode(32);
 
 
-        System.out.println(bst.search(1));
+        bst.displayTree();
     }
 }

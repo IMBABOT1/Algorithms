@@ -117,11 +117,29 @@ public class BinarySearchTree {
         System.out.print(r.data);
         print2D(r.left, space);
     }
-//
-//    public void printLevelOrder(TreeNode r){
-//
-//    }
-//
+
+
+
+    private int heightOfTree(TreeNode r){ ;
+        if (r == null){
+            return  -1;
+        }else {
+            int leftHeight = heightOfTree(r.left);
+            int rightHeight = heightOfTree(r.right);
+
+            if (leftHeight > rightHeight){
+                return (leftHeight + 1);
+            }else {
+                return (rightHeight + 1);
+            }
+        }
+    }
+
+    public int height(){
+         return  heightOfTree(root);
+    }
+
+
     public TreeNode search(int v){
         TreeNode temp = root;
         if (root == null){
