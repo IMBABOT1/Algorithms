@@ -117,9 +117,22 @@ public class BinarySearchTree {
 //
 //    }
 //
-//    public TreeNode search(TreeNode r, int v){
-//
-//    }
+    public TreeNode search(int v){
+        TreeNode temp = root;
+        if (root == null){
+            throw new RuntimeException("Tree is empty");
+        }
+        while (temp != null){
+            if (temp.data == v){
+                return temp;
+            }else if (v > temp.data){
+                temp = temp.right;
+            }else {
+                temp = temp.left;
+            }
+        }
+        return null;
+    }
 //
 //    public TreeNode minValueNode(TreeNode node){
 //

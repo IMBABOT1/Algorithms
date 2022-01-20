@@ -13,6 +13,7 @@ public class Main {
         bst.insertNode(3);
         bst.insertNode(32);
 
-        bst.displayTree();
+
+        System.out.println(bst.search(1));
     }
 }
