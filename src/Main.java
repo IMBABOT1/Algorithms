@@ -10,11 +10,9 @@ public class Main {
         bst.insertNode(1);
         bst.insertNode(2);
         bst.insertNode(10);
-
-        bst.insertNode(8);
-        bst.insertNode(6);
         bst.insertNode(3);
+        bst.insertNode(32);
 
-        bst.displayPostorder();
+        bst.displayTree();
     }
 }

@@ -19,6 +19,8 @@ public class BinarySearchTree {
         }
     }
 
+    private int GLOBAL_SPACE = 5;
+
     private TreeNode root;
 
     public BinarySearchTree(){
@@ -92,10 +94,24 @@ public class BinarySearchTree {
         printPostOrder(node.right);
         System.out.println(node.data);
     }
-//
-//    public void print2D(TreeNode r, int space){
-//
-//    }
+
+    public void displayTree(){
+        print2D(root, GLOBAL_SPACE);
+    }
+
+    private void print2D(TreeNode r, int space){
+        if (r == null){
+            return;
+        }
+        space += GLOBAL_SPACE;
+        print2D(r.right, space);
+        System.out.println();
+        for (int i = GLOBAL_SPACE; i < space; i++){
+            System.out.print(" ");
+        }
+        System.out.print(r.data);
+        print2D(r.left, space);
+    }
 //
 //    public void printLevelOrder(TreeNode r){
 //
