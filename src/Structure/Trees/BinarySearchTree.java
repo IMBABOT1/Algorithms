@@ -54,10 +54,19 @@ public class BinarySearchTree {
     }
 
     //
-//    public void printPreorder(TreeNode node){
-//
-//    }
-//
+    private void printPreorder(TreeNode node){
+        if (node == null){
+            return;
+        }
+        System.out.println(node.data);
+        printPreorder(node.left);
+        printPreorder(node.right);
+    }
+
+    public void displayPreorder(){
+        printPreorder(root);
+    }
+
 //    public void printInorder(TreeNode node){
 //
 //    }

@@ -8,7 +8,9 @@ public class Main {
         BinarySearchTree bst = new BinarySearchTree();
 
         bst.insertNode(1);
+        bst.insertNode(2);
+        bst.insertNode(10);
 
-        System.out.println(bst);
+        bst.displayPreorder();
     }
 }
