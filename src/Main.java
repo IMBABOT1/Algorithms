@@ -11,6 +11,10 @@ public class Main {
         bst.insertNode(2);
         bst.insertNode(10);
 
-        bst.displayPreorder();
+        bst.insertNode(8);
+        bst.insertNode(6);
+        bst.insertNode(3);
+
+        bst.displayPostorder();
     }
 }

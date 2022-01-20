@@ -67,13 +67,31 @@ public class BinarySearchTree {
         printPreorder(root);
     }
 
-//    public void printInorder(TreeNode node){
-//
-//    }
-//
-//    public void printPostOrder(TreeNode node){
-//
-//    }
+    public void displayInorder(){
+        printInorder(root);
+    }
+
+    public void displayPostorder(){
+        printPostOrder(root);
+    }
+
+    private void printInorder(TreeNode node){
+        if (node == null){
+            return;
+        }
+        printInorder(node.left);
+        System.out.println(node.data);
+        printInorder(node.right);
+    }
+
+    private void printPostOrder(TreeNode node){
+        if (node == null){
+            return;
+        }
+        printPostOrder(node.left);
+        printPostOrder(node.right);
+        System.out.println(node.data);
+    }
 //
 //    public void print2D(TreeNode r, int space){
 //
