@@ -156,6 +156,28 @@ public class BinarySearchTree {
         }
         return null;
     }
+
+    public void printBFC(){
+        printLevelOrderBFS(root);
+    }
+
+    private void printGivenLevel(TreeNode r, int level){
+        if (r == null){
+            return;
+        }else if (level == 0){
+            System.out.println(r.data);
+        }else {
+            printGivenLevel(r.left, level - 1);
+            printGivenLevel(r.right, level - 1);
+        }
+    }
+
+    private void printLevelOrderBFS(TreeNode r){
+        int h = height();
+        for (int i = 0; i <= h ; i++) {
+            printGivenLevel(r, i);
+        }
+    }
 //
 //    public TreeNode minValueNode(TreeNode node){
 //
