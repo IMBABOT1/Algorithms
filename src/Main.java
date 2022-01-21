@@ -14,6 +14,9 @@ public class Main {
         bst.insertNode(25);
 
 
-          bst.printBFC();
+
+         bst.delete(30);
+
+         bst.displayTree();
     }
 }

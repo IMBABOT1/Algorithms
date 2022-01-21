@@ -178,14 +178,41 @@ public class BinarySearchTree {
             printGivenLevel(r, i);
         }
     }
-//
-//    public TreeNode minValueNode(TreeNode node){
-//
-//    }
-//
-//    public TreeNode deleteNode(TreeNode r, int v){
-//
-//    }
 
+    public TreeNode minValueNode(TreeNode node){
+        TreeNode current = node;
+        while (current.left != null){
+            current = current.left;
+        }
+        return current;
+    }
 
+    private TreeNode deleteNode(TreeNode r, int v){
+        if (r == null){
+            return null;
+        }else if (v < r.data){
+            r.left = deleteNode(r.left, v);
+        }else if (v > r.data){
+            r.right = deleteNode(r.right, v);
+        }else {
+            if (r.left == null){
+                TreeNode temp = r.right;
+                r = null;
+                return temp;
+            }else if (r.right ==  null){
+                TreeNode temp = r.left;
+                r = null;
+                return temp;
+            }else {
+                TreeNode temp = minValueNode(r.right);
+                r.data = temp.data;
+                r.right = deleteNode(r.right, temp.data);
+            }
+        }
+        return r;
+    }
+
+    public void delete(int value){
+        deleteNode(root, value);
+    }
 }
