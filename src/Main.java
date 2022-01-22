@@ -1,3 +1,4 @@
+import Structure.Heap.MinHeap;
 import Structure.Queue.LinkedQueue.LinkedQueue;
 import Structure.Trees.BinarySearchTree;
 
@@ -5,17 +6,7 @@ import Structure.Trees.BinarySearchTree;
 public class Main {
 
     public static void main(String[] args) {
-        BinarySearchTree bst = new BinarySearchTree();
-
-        bst.insertNode(30);
-        bst.insertNode(18);
-        bst.insertNode(45);
-        bst.insertNode(10);
-        bst.insertNode(25);
-
-
-        bst.insertNodeR(321);
-
-         bst.displayTree();
+        MinHeap heap = new MinHeap(10);
+        System.out.println(heap.linearSearch(123));
     }
 }
