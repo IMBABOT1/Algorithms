@@ -215,4 +215,24 @@ public class BinarySearchTree {
     public void delete(int value){
         deleteNode(root, value);
     }
+
+    public void insertNodeR(int key) {
+        root = insertNodeRecursive(root, new TreeNode(key));
+    }
+
+// private recursive call
+
+    private TreeNode insertNodeRecursive(TreeNode currentParent, TreeNode newNode) {
+
+        if (currentParent == null) {
+            return newNode;
+        } else if (newNode.data > currentParent.data) {
+            currentParent.right = insertNodeRecursive(currentParent.right, newNode);
+        } else if (newNode.data < currentParent.data) {
+            currentParent.left = insertNodeRecursive(currentParent.left, newNode);
+        }
+
+        return currentParent;
+    }
+
 }

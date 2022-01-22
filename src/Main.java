@@ -14,8 +14,7 @@ public class Main {
         bst.insertNode(25);
 
 
-
-         bst.delete(30);
+        bst.insertNodeR(321);
 
          bst.displayTree();
     }
