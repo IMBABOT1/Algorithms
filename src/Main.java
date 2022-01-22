@@ -10,7 +10,6 @@ public class Main {
         heap.insert(5);
         heap.insert(321);
 
-        System.out.println(heap.extractMin());
-        System.out.println(heap.extractMin());
+        heap.deleteKey(5);
     }
 }

@@ -26,6 +26,21 @@ public class MinHeap {
         }
     }
 
+    public void deleteKey(int i){
+        decreaseKey(i, Integer.MAX_VALUE);
+        extractMin();
+    }
+
+    private void decreaseKey(int i, int value){
+        arr[i] = value;
+        while (i != 0 && arr[parent(i)] > arr[i]){
+            int temp = arr[i];
+            arr[i] = arr[parent(i)];
+            arr[parent(i)] = temp;
+            i = parent(i);
+        }
+    }
+
     public int extractMin(){
         if (heap_size <= 0){
             throw new RuntimeException("Heap is empty");
