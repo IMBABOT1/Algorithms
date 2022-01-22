@@ -26,9 +26,52 @@ public class MinHeap {
         }
     }
 
+    public int extractMin(){
+        if (heap_size <= 0){
+            throw new RuntimeException("Heap is empty");
+        }else if (heap_size == 1){
+            heap_size--;
+            return arr[0];
+        }else {
+            int root = arr[0];
+            arr[0] = arr[heap_size - 1];
+            heap_size--;
+            minHeapify(0);
+            return root;
+        }
+    }
+
+    private void minHeapify(int i) {
+        int l = left(i);
+        int r = right(i);
+        int smallest = i;
+        if (l < heap_size && arr[l] < arr[i]){
+            smallest = l;
+        }
+        if (r < heap_size && arr[r] > arr[smallest]){
+            smallest = r;
+        }
+        if (smallest != i){
+            int temp = arr[i];
+            arr[i] = arr[smallest];
+            arr[smallest] = temp;
+            minHeapify(smallest);
+        }
+    }
+
+
     private int parent(int i){
         return (i-1)/2;
     }
+
+    private int left(int i){
+        return (2 * i + 1);
+    }
+
+    private int right(int i){
+        return (2 * i + 2);
+    }
+
 
     public int linearSearch(int value){
         for (int i = 0; i < heap_size ; i++) {
@@ -36,12 +79,6 @@ public class MinHeap {
                 return i;
         }
         return -1;
-    }
-
-    public void print(){
-        for (int i = 0; i < arr.length ; i++) {
-            System.out.println(arr[i]);
-        }
     }
 
     public int height(int N) {

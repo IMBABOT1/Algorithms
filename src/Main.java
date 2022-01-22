@@ -7,10 +7,10 @@ public class Main {
 
     public static void main(String[] args) {
         MinHeap heap = new MinHeap(10);
-        heap.insert(1);
-        heap.insert(123);
-        heap.insert(1234);
+        heap.insert(5);
+        heap.insert(321);
 
-        System.out.println(heap);
+        System.out.println(heap.extractMin());
+        System.out.println(heap.extractMin());
     }
 }
