@@ -1,15 +1,17 @@
+import Sorting.HeapSort;
 import Structure.Heap.MinHeap;
 import Structure.Queue.LinkedQueue.LinkedQueue;
 import Structure.Trees.BinarySearchTree;
+
+import java.util.Arrays;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        MinHeap heap = new MinHeap(10);
-        heap.insert(5);
-        heap.insert(321);
+        int[] arr = new int[]{8,3,2,13,52};
+        HeapSort.sort(arr);
 
-        heap.deleteKey(5);
+        System.out.println(Arrays.toString(arr));
     }
 }

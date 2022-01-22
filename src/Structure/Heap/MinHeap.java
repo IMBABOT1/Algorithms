@@ -11,6 +11,7 @@ public class MinHeap {
         arr = new int[capacity];
     }
 
+
     public void insert(int value){
         if (heap_size == capacity){
             throw new RuntimeException("Heap full " + heap_size);
