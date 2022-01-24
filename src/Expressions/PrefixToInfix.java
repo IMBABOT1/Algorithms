@@ -4,14 +4,14 @@ import java.util.Stack;
 
 public class PrefixToInfix {
 
-    private static boolean isOperand(char c){
+    private boolean isOperand(char c){
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c<= 'Z')){
             return true;
         }
         return false;
     }
 
-    public static String prefixToInfix(String prefix) {
+    public String prefixToInfix(String prefix) {
         Stack<String> stack = new Stack<>();
         StringBuilder result = new StringBuilder();
 

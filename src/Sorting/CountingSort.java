@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CountingSort {
         //O(n+k)
-    public static void countingSort(int[] arr, int k) {
+    public void countingSort(int[] arr, int k) {
         int[] count = new int[k];
         int[] result = new int[arr.length];
 

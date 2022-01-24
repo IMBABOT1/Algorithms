@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class InfixToPostfix {
 
-    private static boolean isOperator(char c){
+    private boolean isOperator(char c){
         if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^'){
             return true;
         }else {
@@ -12,7 +12,7 @@ public class InfixToPostfix {
         }
     }
 
-    private static int precedence(char c){
+    private int precedence(char c){
         if (c == '^'){
             return 3;
         }else if (c == '*' || c == '/'){
@@ -24,7 +24,7 @@ public class InfixToPostfix {
         }
     }
 
-    public static String InfixToPostfix(String infix) {
+    public String InfixToPostfix(String infix) {
        String postfix = "";
        Stack<Character> s = new Stack<>();
         for(int i=0;i<infix.length();i++) {

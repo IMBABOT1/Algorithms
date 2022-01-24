@@ -2,7 +2,7 @@ package Sorting;
 
 public class QuickSort {
     //O(n log(n))
-    public static void quickSort(int[] arr, int s, int e){
+    public void quickSort(int[] arr, int s, int e){
         if (s<e){
             int p = partition(arr, s, e);
             quickSort(arr, s, p - 1);
@@ -10,7 +10,7 @@ public class QuickSort {
         }
     }
 
-    private static int partition(int[] arr, int s, int e){
+    private int partition(int[] arr, int s, int e){
         int pivot = arr[e];
         int index = s;
 

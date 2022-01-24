@@ -1,17 +1,17 @@
 import Sorting.HeapSort;
-import Structure.Heap.MinHeap;
-import Structure.Queue.LinkedQueue.LinkedQueue;
-import Structure.Trees.BinarySearchTree;
+import Structure.Graph.Graph;
+import Structure.Graph.Vertex;
 
 import java.util.Arrays;
-
+import java.util.Vector;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{8,3,2,13,52};
-        HeapSort.sort(arr);
+        Graph graph = new Graph();
 
-        System.out.println(Arrays.toString(arr));
+        graph.addVertex(new Vertex(1, "name"));
+
+        System.out.println(graph);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Stack;
 public class PostfixToPrefix {
 
 
-    private static boolean isOperand(char c){
+    private  boolean isOperand(char c){
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c<= 'Z')){
             return true;
         }
@@ -13,7 +13,7 @@ public class PostfixToPrefix {
     }
 
 
-    public static String postfixToPrefix(String postfix){
+    public String postfixToPrefix(String postfix){
         Stack<String> stack = new Stack<>();
         StringBuilder result = new StringBuilder();
 

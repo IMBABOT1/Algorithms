@@ -2,14 +2,14 @@ package Sorting;
 
 public class RadixSort {
 
-    public static void radixSort(int[] arr){
+    public void radixSort(int[] arr){
         int max = findMax(arr);
         for (int div = 1; max/div > 0; div*=10) {
             countingSort(arr, arr.length, div);
         }
     }
 
-    private static void countingSort(int[] arr, int size, int div){
+    private void countingSort(int[] arr, int size, int div){
         int[] result = new int[size];
         int[] count = new int[10];
 

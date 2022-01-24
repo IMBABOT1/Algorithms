@@ -1,7 +1,7 @@
 package Sorting;
 //O(n log(n))
 public class MergeSort {
-    private static void merge(int[] arr, int left, int mid, int right, int size){
+    private void merge(int[] arr, int left, int mid, int right, int size){
         int i = left;
         int j = mid + 1;
         int k = left;
@@ -35,7 +35,7 @@ public class MergeSort {
         }
     }
 
-    public static void mergeSort(int[]arr, int left, int right, int size){
+    public  void mergeSort(int[]arr, int left, int right, int size){
         if (left < right){
             int mid = (left + right) / 2;
             mergeSort(arr, left, mid, size);

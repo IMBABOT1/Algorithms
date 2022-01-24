@@ -2,7 +2,7 @@ package Sorting;
 
 public class InsertionSort {
     //O(n^2)
-    public static void insertionSort(int[] arr){
+    public void insertionSort(int[] arr){
         int j = 0;
         int key = 0;
         for (int i = 1; i < arr.length; i++) {

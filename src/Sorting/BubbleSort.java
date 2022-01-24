@@ -2,7 +2,7 @@ package Sorting;
 
 public class BubbleSort {
     //O(n^2)
-    public static void bubbleSort(int[] arr){
+    public void bubbleSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length-i-1; j++) {
                 if (arr[j] > arr[j + 1]){

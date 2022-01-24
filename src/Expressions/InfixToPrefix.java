@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class InfixToPrefix {
 
-    private static boolean isOperator(char c){
+    private boolean isOperator(char c){
         if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^'){
             return true;
         }else {
@@ -11,7 +11,7 @@ public class InfixToPrefix {
         }
     }
 
-    private static int precedence(char c){
+    private  int precedence(char c){
         if (c == '^'){
             return 3;
         }else if (c == '*' || c == '/'){
@@ -23,7 +23,7 @@ public class InfixToPrefix {
         }
     }
 
-    public static String infixToPrefix(String infix){
+    public  String infixToPrefix(String infix){
         Stack<Character> stack = new Stack<>();
         StringBuilder temp = new StringBuilder(infix).reverse();
         String[] reverse = temp.toString().split("");

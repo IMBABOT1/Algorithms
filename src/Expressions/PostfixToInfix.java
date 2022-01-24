@@ -4,14 +4,14 @@ import java.util.Stack;
 
 public class PostfixToInfix {
 
-    private static boolean isOperand(char c){
+    private  boolean isOperand(char c){
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c<= 'Z')){
             return true;
         }
         return false;
     }
 
-    private static boolean isOperator(char c){
+    private  boolean isOperator(char c){
         if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^'){
             return true;
         }else {
@@ -19,7 +19,7 @@ public class PostfixToInfix {
         }
     }
 
-    public static String postfixToInfix(String postfix){
+    public  String postfixToInfix(String postfix){
         Stack<String> stack = new Stack<>();
         StringBuilder result = new StringBuilder();
 
