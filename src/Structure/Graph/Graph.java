@@ -13,6 +13,7 @@ public class Graph {
         vertices = new Vector<>();
     }
 
+
     public void addVertex(Vertex vertex){
         boolean check = checkIfExistByID(vertex.getState_id());
         if (check == true){
@@ -56,16 +57,23 @@ public class Graph {
     }
 
 
-    private boolean isEdgeExistByID(int id1, int id2){
-        Vertex v = vertices.get(id1);
-        List<Edge> list = v.getEdgeList();
-        for (Edge e : list){
-            if (e.getDestinationVertexID() == id2){
-              return true;
+    private boolean isEdgeExistByID(int fromVertex, int toVertex) {
+        Vertex v = vertices.get(fromVertex);
+        List <Edge> list;
+        list = v.getEdgeList();
+        System.out.println(list);
+        for (Edge e: list) {
+            if (e.getDestinationVertexID()  == toVertex) {
+                return true;
+
             }
         }
         return false;
     }
+
+
+
+
 
     private boolean checkIfExistByID(int state_id) {
         for (Vertex v: vertices){
