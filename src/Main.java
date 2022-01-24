@@ -9,9 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
         Graph graph = new Graph();
-
-        graph.addVertex(new Vertex(1, "name"));
-
-        System.out.println(graph);
+        graph.addVertex(new Vertex(1, "mh"));
+        graph.addVertex(new Vertex(2, "goa"));
+        graph.addVertex(new Vertex(3, "mp"));
     }
 }
