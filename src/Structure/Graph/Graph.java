@@ -46,6 +46,15 @@ public class Graph {
         }
     }
 
+    public void printGraph(){
+        for (int i = 0; i < vertices.size() ; i++) {
+            Vertex temp = vertices.get(i);
+            System.out.print(temp.getState_name() + "(" + temp.getState_id() + ")");
+            temp.printEdgeList();
+
+        }
+    }
+
 
     private boolean isEdgeExistByID(int id1, int id2){
         Vertex v = vertices.get(id1);

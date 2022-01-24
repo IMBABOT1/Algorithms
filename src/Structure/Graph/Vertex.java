@@ -1,5 +1,6 @@
 package Structure.Graph;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,11 +13,13 @@ public class Vertex {
     public Vertex(){
         state_id = 0;
         state_name = "";
+        edgeList = new ArrayList<>();
     }
 
     public Vertex(int id, String name){
         this.state_id = id;
         this.state_name = name;
+        edgeList = new ArrayList<>();
     }
 
     public int getState_id(){
@@ -37,5 +40,13 @@ public class Vertex {
 
     public List<Edge> getEdgeList(){
         return edgeList;
+    }
+
+
+    public void printEdgeList() {
+        System.out.print("[");
+        for (int i = 0; i < edgeList.size()  ; i++) {
+            System.out.println(edgeList.get(i).getDestinationVertexID() + "(" + edgeList.get(i).getWeight() + "]");
+        }
     }
 }
